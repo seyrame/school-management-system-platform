@@ -71,13 +71,25 @@
     }
 
     /* Green for good attendance (≥90%) */
-    td:nth-child(5):contains("9"), 
-    td:nth-child(5):contains("100") {
+    td:nth-child(5).high-attendance {
         color: #27ae60;
     }
-    </style>
-</head>
-<body>
+    /* Yellow for medium attendance (80-89%) */
+    td:nth-child(5).medium-attendance {
+        color: #f39c12;
+    }
+    /* Red for low attendance (<80%) */
+    td:nth-child(5).low-attendance {
+        color: #e74c3c;
+    }
+        td:last-child {
+        font-weight: bold;
+        text-align: center;
+    }
+       
+        </style>
+    </head>
+    <body>
 
     <h1>Student Management System</h1>
     <h2>Multi-School AI Platform</h2>
@@ -95,44 +107,50 @@
             <td>Emma Johnson</td>
             <td>10th</td>
             <td>Math</td>
-            <td>95%</td>
+            <td class="high-attendance">✓ 95%</td>
         </tr>
         <tr>
             <td>2</td>
             <td>Liam Smith</td>
             <td>10th</td>
             <td>Science</td>
-            <td>88%</td>
+            <td class="medium-attendance">⚠ 88%</td>
         </tr>
         <tr>
             <td>3</td>
             <td>Sophia Garcia</td>
             <td>9th</td>
             <td>English</td>
-            <td>100%</td>
+            <td class="high-attendance">✓ 100%</td>
         </tr>
         <tr>
             <td>4</td>
             <td>Mason Brown</td>
             <td>11th</td>
             <td>History</td>
-            <td>76%</td>
+            <td class="low-attendance">✗ 76%</td>
         </tr>
         <tr>
             <td>5</td>
             <td>Ken Arthur</td>
             <td>12th</td>
             <td>Physics</td>
-            <td>75%</td>
+            <td class="low-attendance">✗ 75%</td>
         </tr>
         <tr>
             <td>6</td>
             <td>Charles Dickson</td>
             <td>13th</td>
             <td>Chemistry</td>
-            <td>70%</td>
+            <td class="low-attendance">✗ 70%</td>
         </tr>
     </table>
+    <p style="text-align: center; color: #7f8c8d; font-size: 12px;">
+    Last updated: <span id="last-updated"></span>
+</p>
+<script>
+    document.getElementById('last-updated').innerHTML = new Date().toLocaleString();
+</script>
 
 </body>
 </html>
