@@ -65,6 +65,16 @@
         font-weight: bold;
         color: #2c3e50;
         }
+            /* Style attendance percentages */
+    td:nth-child(5) {
+        font-weight: bold;
+    }
+
+    /* Green for good attendance (≥90%) */
+    td:nth-child(5):contains("9"), 
+    td:nth-child(5):contains("100") {
+        color: #27ae60;
+    }
     </style>
 </head>
 <body>
